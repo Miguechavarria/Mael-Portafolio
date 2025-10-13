@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mael | Portafolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Contrail+One&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="glitch-effect-wrapper">
+        <div class="glitch__img"></div><div class="glitch__img"></div><div class="glitch__img"></div><div class="glitch__img"></div><div class="glitch__img"></div>
+    </div>
+
+    <div id="page-transition-overlay" class="overlay"></div>
+    <div id="loader" class="loader"></div>
+
+    <div id="main-content" class="hidden">
+
+        <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+        <nav class="circular-menu" aria-hidden="true" aria-label="Menú principal">
+            <ul>
+                <li class="circular-item" data-angle="-60"><a href="index.html">Inicio</a></li>
+                <li class="circular-item" data-angle="-20"><a href="portafolio.html">Portafolio</a></li>
+                <li class="circular-item" data-angle="20"><a href="acerca.html">Acerca de Mí</a></li>
+                <li class="circular-item" data-angle="60"><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        
+        <main class="neo-brutalist-grid">
+            <section class="page-container portfolio-section">
+                <h2 class="page-title" data-text="Portafolio">Portafolio</h2>
+                
+                <div class="portfolio-filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="programacion">Programación Creativa</button>
+                    <button class="filter-btn" data-filter="instalaciones">Instalaciones</button>
+                    <button class="filter-btn" data-filter="ilustraciones">Ilustraciones</button>
+                </div>
+
+                <div class="portfolio-grid">
+                    <div class="project-card" data-category="programacion" data-modal-image="assets/diseños/ASFiii4.png" data-modal-title="Proyecto ASFII" data-modal-tech="ESP32, BLENDER" data-modal-desc="Proyecto interactivo, en base a un dispositivo con ESP32 que dibuja en un papel mediante un armonografo controlado por motores paso a paso. El diseño 3D fue realizado en Blender y el código en C++ utilizando la plataforma Arduino.">
+                        <div class="card-image" style="background-image: url('assets/diseños/ASFiii3.png');"></div>
+                        <div class="card-overlay"><h3>ASFI</h3></div>
+                    </div>
+                    
+                    <div class="project-card" data-category="instalaciones" data-modal-image="assets/diseños/Render 9.jpg" data-modal-title="ShadowBox" data-modal-tech="Blender" data-modal-desc="Simulación de vitrina estilo ShadowBox en 3D, utilizando Blender para modelado y renderizado. La pieza fusiona el concepto de Navidad y Zodiaco.">
+                        <div class="card-image" style="background-image: url('assets/diseños/Render\ 1.jpg');"></div>
+                        <div class="card-overlay"><h3>ShadowBox</h3></div>
+                    </div>
+
+                    <div class="project-card" data-category="instalaciones" data-modal-image="assets/diseños/vuelta1.jpg" data-modal-title="Serie 'Void'" data-modal-tech="Procreate, Photoshop" data-modal-desc="Colección de ilustraciones digitales explorando temas de ciencia ficción y existencialismo con una estética oscura y minimalista.">
+                        <div class="card-image" style="background-image: url('assets/diseños/vuelta2.jpg');"></div>
+                        <div class="card-overlay"><h3>Vuelta Cervantes</h3></div>
+                    </div>
+
+                    <div class="project-card" data-category="ilustraciones" data-modal-image="assets/Ilustraciones/HiPaint_1715407407687 (1).jpg" data-modal-title="RAGA" data-modal-tech="HiPaint" data-modal-desc="Ilustración digital creada con HiPaint, inspirada en fantasia.">
+                        <div class="card-image" style="background-image: url('assets/Ilustraciones/HiPaint_1715407407687\ \(1\).jpg');"></div>
+                        <div class="card-overlay"><h3>RAGA</h3></div>
+                    </div>s
+
+                    <div class="project-card" data-category="instalaciones" data-modal-image="assets/ecox2.jpeg" data-modal-title="ECOXFERA" data-modal-tech="Resolume Arena, ESP32, Blender, Adobe suite" data-modal-desc="Instalacion interactiva que combina proyección mapeada y un dispositivo con ESP32 para crear una experiencia inmersiva. Donde con el toque de vida el usuario puede interactuar con la proyección y dar vida al espacio. Proyecto conjunto con: Saducor, Piipe_lab, Gali.">
+                        <div class="card-image" style="background-image: url('assets/ecox.jpg');"></div>
+                        <div class="card-overlay"><h3>ECOXFERA</h3></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <img id="modal-img" src="" alt="Imagen del proyecto">
+            <div class="modal-text">
+                <h3 id="modal-title"></h3>
+                <p id="modal-desc"></p>
+                <ul id="modal-tech" class="tech-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script src="js/loader.js" defer></script>
+    <script src="js/transitions.js" defer></script>
+    <script src="js/glitch-effect.js" defer></script>
+    <script src="js/app.js" defer></script>
+</body>
+</html>

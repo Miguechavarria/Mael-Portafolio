@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mael | Contacto</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Contrail+One&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="contact-page"> <div class="glitch-effect-wrapper">
+        <div class="glitch__img"></div><div class="glitch__img"></div><div class="glitch__img"></div><div class="glitch__img"></div><div class="glitch__img"></div>
+    </div>
+
+    <div id="page-transition-overlay" class="overlay"></div>
+    <div id="loader" class="loader"></div>
+
+    <div id="main-content" class="hidden">
+
+        <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+        <nav class="circular-menu" aria-hidden="true" aria-label="Menú principal">
+            <ul>
+                <li class="circular-item" data-angle="-60"><a href="index.html">Inicio</a></li>
+                <li class="circular-item" data-angle="-20"><a href="portafolio.html">Portafolio</a></li>
+                <li class="circular-item" data-angle="20"><a href="acerca.html">Acerca de Mí</a></li>
+                <li class="circular-item" data-angle="60"><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        
+        <main class="neo-brutalist-grid">
+            <section class="page-container contact-section">
+                <h2 class="page-title">Contacto</h2>
+                <p class="page-subtitle">¿Tienes una idea, un proyecto o simplemente quieres saludar? Hablemos.</p>
+
+                <div class="contact-container">
+                    <div class="contact-header">
+                        <p>// Iniciar Transmisión Segura</p>
+                    </div>
+                    <form class="contact-form" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">ID de Operador (Nombre)</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Frecuencia (Email)</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje Encriptado</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn"><span>ENVIAR</span></button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="js/loader.js" defer></script>
+    <script src="js/transitions.js" defer></script>
+    <script src="js/glitch-effect.js" defer></script>
+    <script src="js/app.js" defer></script>
+</body>
+</html>
