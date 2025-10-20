@@ -13,7 +13,17 @@
     --c-duration: 600ms;
     --c-ease: cubic-bezier(.6, 0, .4, 1);
     --c-item-color: var(--color-primary-text);
-    --noise-opacity: 0.05;
+    --noise-opacity: 0.25; /* Un valor sutil pero visible */
+}
+
+/* --- OCULTAR BARRA DE SCROLL (CORREGIDO) --- */
+body::-webkit-scrollbar,
+.page-container::-webkit-scrollbar {
+    display: none;
+}
+body, .page-container {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
 }
 
 /* --- Estilos Base --- */
@@ -28,22 +38,27 @@ body {
 }
 
 /* --- Efecto Granulado --- */
-body::after {
-    content: "";
-    position: fixed; top: -50%; left: -50%;
-    width: 200%; height: 200%;
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAChFdKnAAAAFVBMVEUAAAD///8A//8A/wAAAP8AAAD///+x13VRAAAAB3RSTlMAAAAAAHu0zS+JAAAAiklEQVQoz2PgBQeXGAI0YJBBGEYIuBgiWkEwAhSDEAwAi0EMgABSDEMwCEgMgYAB2DDCBAgG4ZgIMBgIMBgcGAgwsBgYGBgYA3AwAAiDAIAfMwCA4mBAoJgYwOADlIAgYWBjIeIAYQYcxgAGH4BgIMBggGEQwGAgwsDAwABIGJgYGBgYGOAAAD9vB/3JgN00AAAAAElFTkSuQmCC') repeat;
+.noise-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/7547.jpg");
+    background-repeat: repeat;
     opacity: var(--noise-opacity);
     pointer-events: none;
     animation: noise-animation 0.5s steps(10) infinite;
     z-index: 10000;
+    filter: invert(1);
 }
+
+
 
 /* --- Contenido Principal --- */
 #main-content {
     width: 100%; height: 100vh;
     position: relative; display: block;
-    overflow: hidden; padding: 40px;
+    overflow: hidden; padding: 20px;
     z-index: 10;
 }
 main.neo-brutalist-grid {
@@ -80,7 +95,7 @@ main.neo-brutalist-grid {
     align-items: center;
     gap: 1.5rem;
     padding: 20px;
-    border-left: 1px solid var(--color-border);
+    border-left: 2px solid var(--color-border);
     position: relative;
     z-index: 2;
     height: 100%;
@@ -92,6 +107,7 @@ main.neo-brutalist-grid {
     align-self: center;
     text-align: center;
     margin-bottom: 2rem; /* Espacio debajo del nombre */
+    margin-left: 1rem;
 }
 .hero.neo-brutalist-hero h1 {
     font-size: 5rem; /* Tamaño ajustado para caber en el panel */
@@ -221,7 +237,7 @@ main.neo-brutalist-grid {
 /* --- Efecto Glitch Global --- */
 .glitch-effect-wrapper {
     position: fixed; top: 0; left: 0;
-    width: 100%; height: 100%;
+    width: 100vw; height: 100vh;
     pointer-events: none; z-index: 1;
     opacity: 0;
 }
@@ -301,6 +317,7 @@ main.neo-brutalist-grid {
     text-align: center;
     display: block;
     margin-bottom: 2rem; /* Ajuste el margen para que los filtros no queden tan pegados */
+    font-size: 4rem; /* Tamaño grande para el título */
 }
 
 .portfolio-filters {
